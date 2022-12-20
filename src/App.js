@@ -21,7 +21,7 @@ function App() {
             path="/"
             element={<Form />}
           />
-          <Route exact path="/activationLink" element={<ActivationPage />} />
+          <Route exact path="/activationLink/:id" element={<ActivationPage />} />
       </Routes>
     </BrowserRouter>
     </div>
