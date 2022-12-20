@@ -6,8 +6,8 @@ export default function Form() {
   const [dateError, setError] = useState('');
   const { register, formState: { errors }, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    data.date.length === 0 ? setError("Required") : setError('')
+    console.log("data", data);
+    !data.date || data.date.length === 0 ? setError("Required") : setError('')
 
   }
   const onChange = (e, errors) => {
@@ -20,7 +20,8 @@ export default function Form() {
     if (age < 18) setError("Invalid age");
   }
   return (
-    <div className="container">
+    <div className="container reg-container">
+      <div className="welcome-text">Welcome! Start Your Registration Process</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <label for="userName">User Name</label>

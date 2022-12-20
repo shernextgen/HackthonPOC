@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ActivationPage = () => {
     const [otp, setOtp] = useState({ value: '', otp1: "", otp2: "", otp3: "", otp4: "" });
-
+    const [isSuccess, setIsSuccess] = useState(false)
     const handleChange = (value1, event) => {
         // setOtp({ [value1]: event.target.value });
         setOtp({
@@ -15,6 +15,7 @@ const ActivationPage = () => {
         const data = new FormData(event.target);
         console.log("otp-", otp);
         event.preventDefault();
+        setIsSuccess(true)
     }
 
     const inputfocus = (elmnt) => {
@@ -35,7 +36,10 @@ const ActivationPage = () => {
     }
 
     return (
-        <div>
+        <div className="container otp-container">
+            {isSuccess ? <div className="welcome-text">Congratulations! You are successfully onboarded!!</div>
+            : <><div className="welcome-text">Complete Your Onboarding Process</div>
+            <div>Enter your One Time Password</div>
             <form onSubmit={handleSubmit}>
                 <div className="otpContainer">
                     <input
@@ -78,10 +82,8 @@ const ActivationPage = () => {
                         tabIndex="4" maxLength="1" onKeyUp={e => inputfocus(e)}
                     />
                 </div>
-                <button className="primary" type="submit">
-                    Submit
-                </button>
-            </form>
+                <input type="submit" className="btn btn-primary"/>
+            </form></>}
         </div>
 
     )
