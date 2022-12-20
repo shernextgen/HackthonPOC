@@ -13,7 +13,7 @@ const ActivationPage = () => {
 
     const handleSubmit = (event) => {
         const data = new FormData(event.target);
-        console.log("otp-", otp);
+        console.log("otp-", data);
         event.preventDefault();
         setIsSuccess(true)
     }

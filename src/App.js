@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Form from './Form.js';
 import Header from './Header.js';
@@ -14,18 +13,18 @@ import Login from './Login.js';
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <BrowserRouter>
-           <Routes>
-       <Route
+        <Routes>
+          <Route
             exact
             path="/"
             element={<Login />}
           />
           <Route exact path="/activationLink/:id" element={<ActivationPage />} />
-            <Route exact path="/register" element={<Form />} />
-      </Routes>
-    </BrowserRouter>
+          <Route exact path="/register" element={<Form />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
