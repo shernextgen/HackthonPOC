@@ -8,6 +8,7 @@ import {
   Routes
 } from 'react-router-dom';
 import ActivationPage from './ActivationPage.js';
+import Login from './Login.js';
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
        <Route
             exact
             path="/"
-            element={<Form />}
+            element={<Login />}
           />
           <Route exact path="/activationLink/:id" element={<ActivationPage />} />
+            <Route exact path="/register" element={<Form />} />
       </Routes>
     </BrowserRouter>
     </div>
